@@ -19,6 +19,8 @@ pub mod transport;
 #[cfg(feature = "discovery")]
 pub mod discovery;
 
+pub mod ffi;
+
 // Reexportações de alto nível
 pub use error::{EscPosError, ProtocolError, TransportError};
 pub use protocol::{Alignment, CodePage, CutType, EscPosBuilder, TextScale, Underline};

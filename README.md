@@ -93,6 +93,36 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ---
 
+## 🔌 Exportação como Biblioteca Dinâmica (`.dll` e `.so`)
+
+O motor está configurado como `cdylib`, permitindo ser compilado como biblioteca compartilhada e consumido por **qualquer linguagem** (C#, Node.js/Electron, Python, C++, Go, Flutter, Delphi, etc.):
+
+- **Windows:** `target/release/thz_escpos.dll` (e `thz_escpos.dll.lib`)
+- **Linux:** `target/release/libthz_escpos.so`
+- **Header C:** [`include/thz_escpos.h`](./include/thz_escpos.h)
+
+### Como Compilar a `.dll` / `.so`:
+```powershell
+# No Windows (gera thz_escpos.dll)
+cargo build --release --lib
+
+# No Linux (gera libthz_escpos.so)
+cargo build --release --lib
+```
+
+### Funções Exportadas (C-ABI):
+* `escpos_builder_new(columns)` / `escpos_builder_free(builder)`
+* `escpos_builder_init(builder)` / `escpos_builder_code_page(builder, page)`
+* `escpos_builder_text(builder, text)` / `escpos_builder_text_ln(builder, text)`
+* `escpos_builder_separator(builder, ch)` / `escpos_builder_two_columns(builder, left, right)`
+* `escpos_builder_cut(builder, type, lines)`
+* `escpos_builder_build(builder, &out_len)` / `escpos_bytes_free(ptr, len)`
+* `escpos_discover_printers_json()` / `escpos_string_free(ptr)`
+* `escpos_send_usb_windows(path, data, len)` / `escpos_send_usb_linux(path, data, len)`
+* `escpos_send_serial(port, baud, data, len)`
+
+---
+
 ## 💻 Utilitário de Linha de Comando (CLI)
 
 O repositório inclui um binário utilitário para testes imediatos:

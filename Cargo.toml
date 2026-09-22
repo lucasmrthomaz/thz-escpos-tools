@@ -6,6 +6,7 @@ edition = "2024"
 [lib]
 name = "thz_escpos"
 path = "src/lib.rs"
+crate-type = ["rlib", "cdylib"]
 
 [[bin]]
 name = "thz-escpos"
