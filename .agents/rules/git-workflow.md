@@ -18,3 +18,4 @@ Diretrizes para gerenciamento de código e histórico no repositório `thz-escpo
   - Sugerir a criação de branch: `feature/<nome-da-feature>` ou `exp/<nome-do-experimento>`.
   - Desenvolver e validar incrementalmente na branch com commits atômicos.
   - Mesclar (merge/PR) na branch principal após validação e testes aprovados.
+  - Consulte [ROADMAP.md](../../ROADMAP.md) para a lista de branches dedicadas ativas.
