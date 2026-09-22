@@ -29,3 +29,8 @@ O projeto é baseado nas descobertas e validações técnicas do projeto irmão 
   - `profile`: estruturas e desserialização de perfis JSON.
   - `transport`: abstração de envio (USBPRINT direct Win32 handle, Serial COM, Mock).
 - **Testes:** Priorize testes unitários para a geração correta de bytes de cada comando ESC/POS.
+
+## Fluxo de Versionamento e Git
+- **Commits Atômicos:** A cada etapa ou funcionalidade concluída, realize commits atômicos, claros e com escopo bem definido (Conventional Commits: `feat:`, `fix:`, `refactor:`, `test:`, `docs:`), garantindo rastreabilidade precisa e facilitando eventuais rollbacks ou bisects. Evite acumular muitas alterações em um único commit gigante.
+- **Branches para Marcos e Funcionalidades:** Sugira e utilize branches dedicadas (ex: `feature/nova-funcionalidade` ou `exp/teste-hardware`) para desenvolvimentos em andamento ou recursos experimentais, mantendo a branch principal (`master`/`main`) sempre estável e testada.
+
