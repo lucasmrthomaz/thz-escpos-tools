@@ -1,0 +1,26 @@
+# Rust Build Artifacts
+/target/
+**/*.rs.bk
+*.pdb
+
+# Output & Binary files de teste
+*.bin
+*.prn
+*.tmp
+
+# IDEs e Editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.fleet/
+
+# Arquivos de Sistema Operacional
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+
+# Logs e Ambientes Locais
+*.log
+.env
+.env.*.local

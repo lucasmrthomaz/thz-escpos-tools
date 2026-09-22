@@ -1,0 +1,28 @@
+[package]
+name = "thz-escpos-tools"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "thz_escpos"
+path = "src/lib.rs"
+
+[[bin]]
+name = "thz-escpos"
+path = "src/main.rs"
+
+[dependencies]
+thiserror = "2.0"
+serde = { version = "1.0", features = ["derive"], optional = true }
+serde_json = { version = "1.0", optional = true }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"], optional = true }
+serialport = { version = "4.7", default-features = false, optional = true }
+
+[features]
+default = ["protocol", "graphics", "profile", "transport-usb", "transport-serial", "discovery"]
+protocol = []
+graphics = ["dep:image"]
+profile = ["dep:serde", "dep:serde_json"]
+transport-usb = []
+transport-serial = ["dep:serialport"]
+discovery = []
